@@ -4,10 +4,7 @@ include('connection.php');
 ?>
 
 	
-	<!-- Product --><?php
-include ('aside.php');
-include('connection.php');
-?>
+
 
 	
 	<!-- Product -->
@@ -267,16 +264,16 @@ if(isset($_GET['id'])){
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="../adminpanel/img/<?php echo $pro[5] ?>" alt="IMG-PRODUCT">
+							<img src="../php-main/img/<?php echo $pro[5] ?>" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+							<a href="product-detail.php?proid=<?php echo $pro['0'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="product-detail.php?proid=<?php echo $pro['0'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 								<?php echo $pro[1] ?>
 								</a>
 
@@ -307,7 +304,7 @@ while($pro=mysqli_fetch_array($query)){
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="../adminpanel/img/<?php echo $pro[5] ?>" alt="IMG-PRODUCT">
+							<img src="../php-main/img/<?php echo $pro[5] ?>" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
