@@ -1,6 +1,7 @@
 <?php
 include('connection.php');
 include('aside.php');
+include('query.php');
 ?>
 	<!-- breadcrumb -->
 	<div class="container">
@@ -40,7 +41,7 @@ if(isset($_GET['proid'])){
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 							<div class="slick3 gallery-lb">
-								<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
+								<div class="item-slick3" >
 									<div class="wrap-pic-w pos-relative">
 										<img src="../php-main/img/<?php echo $p[5] ?>" alt="IMG-PRODUCT">
 
@@ -71,7 +72,7 @@ if(isset($_GET['proid'])){
 						
 						<!--  -->
 						<div class="p-t-33">
-							
+							<form action="" method='post'>
 
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
@@ -79,6 +80,10 @@ if(isset($_GET['proid'])){
 										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
 											<i class="fs-16 zmdi zmdi-minus"></i>
 										</div>
+<input type="hidden" name='pid' value="<?php echo $p[0]?>">
+<input type="hidden" name='pname' value="<?php echo $p[1]?>">
+<input type="hidden" name='pprice' value="<?php echo $p[2]?>">
+<input type="hidden" name='pimg' value="<?php echo $p[5]?>">
 
 										<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
 
@@ -87,9 +92,10 @@ if(isset($_GET['proid'])){
 										</div>
 									</div>
 
-									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+									<button type="submit" name="AddToCart" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
 										Add to cart
 									</button>
+									</form>
 								</div>
 							</div>	
 						</div>
@@ -332,7 +338,7 @@ if(isset($_GET['proid'])){
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										Esprit Ruffle Shirt
 									</a>
 
