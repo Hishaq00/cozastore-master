@@ -58,7 +58,19 @@ if (isset($_POST["AddToCart"])) {
         echo "<script>alert('Product added to cart successfully'); location.assign('index.php');</script>";
     }
 }
-
+if(isset($_POST['btn_login'])){
+    $email=$_POST['email'];
+    $pass=$_POST['pass'];
+    $query=mysqli_query($con,"SELECT * FROM `register` where email='$email' AND password='$pass' AND role='user'");
+    $r=mysqli_num_rows($query);
+    $q=mysqli_fetch_array($query);
+    if($query){
+        $_SESSION['username']=$q[1];
+        $_SESSION['userid']=$q[0];
+        echo "<script>alert('login successfully');
+        location.assign('shopping-cart.php);</script>";
+    }
+}
 
 ?>
 
