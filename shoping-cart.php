@@ -15,7 +15,27 @@ include('aside.php');
 		</span>
 	</div>
 </div>
-
+<?php
+if(isset($_GET['checkout'])){
+	$uid=$_SESSION['userid'];
+	$uname=$_SESSION['username'];
+	if(isset($_SESSION['cart'])){
+foreach($_SESSION['cart'] as $key){
+	$pid = $key['proid'];
+	$pname = $key['proname'];
+	$pq=$key['proqty'];
+	$pprice=$key['proprice'];
+}
+$order=mysqli_query($con,"INSERT INTO `orders`( `u_id`, `u_name`, `p_id`, `p_name`, `p_price`, `p_qty`) VALUES ('$uid','$uname','$pid','$pname','$pprice','$pq')");
+if($order){
+	echo "<script>alert('order Placed successfully');
+	location.assign('index.php');
+	</script>";
+	unset($_SESSION['cart']);
+}
+	}
+}
+?>
 
 <!-- Shoping Cart -->
 <form class="bg0 p-t-75 p-b-85">
