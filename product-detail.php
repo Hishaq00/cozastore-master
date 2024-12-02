@@ -1,8 +1,7 @@
-
 <?php
-include('connection.php');
+// include('connection.php');
 include('aside.php');
-// include('query.php');
+//include('query.php');
 ?>
 	<!-- breadcrumb -->
 	<div class="container">
@@ -86,7 +85,7 @@ if(isset($_GET['proid'])){
 <input type="hidden" name='pprice' value="<?php echo $p[2]?>">
 <input type="hidden" name='pimg' value="<?php echo $p[5]?>">
 
-										<input class="mtext-104 cl3 txt-center num-product" type="number" name="pqty" value="1">
+<input class="mtext-104 cl3 txt-center num-product" type="number" name="pqty" value="1">
 
 										<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
 											<i class="fs-16 zmdi zmdi-plus"></i>

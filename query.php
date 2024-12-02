@@ -1,3 +1,4 @@
+
 <?php
 include('connection.php');
 session_start();
@@ -64,13 +65,19 @@ if(isset($_POST['btn_login'])){
     $query=mysqli_query($con,"SELECT * FROM `register` where email='$email' AND password='$pass' AND role='user'");
     $r=mysqli_num_rows($query);
     $q=mysqli_fetch_array($query);
-    if($query){
+    if($q){
         $_SESSION['username']=$q[1];
         $_SESSION['userid']=$q[0];
         echo "<script>alert('login successfully');
-        location.assign('shopping-cart.php);</script>";
+        location.assign('shoping-cart.php');</script>";
     }
-}
+    else{
+        echo "<script>alert('login failed');
+        location.assign('shoping-cart.php');
+        </script>";
+    }
+    }
+
 
 ?>
 

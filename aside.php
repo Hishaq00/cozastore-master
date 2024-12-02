@@ -110,6 +110,16 @@ include('query.php');
 							<li>
 								<a href="contact.php">Contact</a>
 							</li>
+							<?php
+							if(isset($_SESSION['username'])){
+							?>
+
+<li>
+<a href="logout.php">logout</a>
+</li>
+<?php
+}
+							?>
 						</ul>
 					</div>	
 
